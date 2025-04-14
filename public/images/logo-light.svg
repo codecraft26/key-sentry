@@ -1,0 +1,24 @@
+<!-- logo-dark.svg -->
+<svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background for dark mode -->
+  <defs>
+    <linearGradient id="grad-dark" x1="0" y1="0" x2="140" y2="0">
+      <stop offset="0%" stop-color="#1F2937"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="140" height="32" rx="8" fill="url(#grad-dark)" />
+
+  <!-- API icon (brackets style) -->
+  <g transform="translate(10, 8)" fill="#F3F4F6">
+    <rect x="0" y="0" width="2" height="16" rx="1" />
+    <rect x="8" y="4" width="2" height="8" rx="1" />
+    <rect x="16" y="0" width="2" height="16" rx="1" />
+  </g>
+
+  <!-- Brand text -->
+  <text x="55" y="20" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#F9FAFB">
+    KeySentry
+  </text>
+</svg>
