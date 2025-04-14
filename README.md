@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KeySentry - API Key Management & Analytics Platform
+
+KeySentry is a comprehensive API key management, usage tracking, and analytics platform designed for multi-tenant applications. Our platform provides robust security controls, real-time analytics, and role-based access management.
+
+## Features
+
+- **Advanced API Key Management**: Create, revoke, and manage API keys with granular permissions.
+- **Real-time Usage Analytics**: Track requests, response times, error rates, and usage patterns.
+- **Multi-tenant Architecture**: Support multiple organizations with isolated environments.
+- **Role-Based Access Control**: Implement fine-grained access control with customizable roles.
+- **Automated Rate Limiting**: Protect your APIs from abuse with configurable rate limits.
+- **Comprehensive Audit Logs**: Track all key management actions with detailed logs.
+
+## Tech Stack
+
+- **Frontend**: Next.js 14 with App Router
+- **UI**: Tailwind CSS with dark/light theme support
+- **State Management**: React Context API
+- **Authentication**: JWT-based authentication
+- **Responsive Design**: Mobile-first approach
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Node.js** 18.x or higher
+- **npm** or **yarn**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-organization/keysentry.git
+   cd keysentry
