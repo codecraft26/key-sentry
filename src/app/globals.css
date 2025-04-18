@@ -12,3 +12,75 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+
+
+/* Advanced Interactive Scrollbar Styling */
+
+/* Base scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track with subtle gradient */
+::-webkit-scrollbar-track {
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.02), transparent);
+  border-radius: 10px;
+}
+
+/* Thumb with animation and glow effect */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(131, 24, 251, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover state with enhanced glow and size change */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+  box-shadow: 0 0 15px rgba(131, 24, 251, 0.3);
+}
+
+/* Active state for when scrolling */
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(45deg, #4338ca, #6d28d9);
+  box-shadow: 0 0 20px rgba(131, 24, 251, 0.5);
+}
+
+/* Corner styling */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 transparent;
+}
+
+/* Add a subtle fading effect to the content edges (optional) */
+.scroll-container::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.scroll-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
