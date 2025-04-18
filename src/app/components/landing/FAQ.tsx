@@ -63,12 +63,12 @@ export default function FAQ() {
             Frequently asked questions
           </p>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Everything you need to know about APIScape. Can't find the answer you're looking for?{' '}
-            <a href="/contact" className="font-medium text-primary hover:text-primary/80">
-              Contact our support team
-            </a>
-            .
-          </p>
+  Everything you need to know about APIScape. Can&#39;t find the answer you&#39;re looking for?{' '}
+  <a href="/contact" className="font-medium text-primary hover:text-primary/80">
+    Contact our support team
+  </a>
+  .
+</p>
         </div>
 
         <div className="mx-auto mt-16 max-w-2xl lg:max-w-4xl">
