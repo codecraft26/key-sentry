@@ -190,8 +190,8 @@ export default function Pricing() {
               Need a custom solution?
             </h3>
             <p className="mt-4 text-lg text-muted-foreground">
-              Our enterprise plan offers custom features, dedicated support, and flexible pricing for organizations with complex requirements. Let's discuss how we can help.
-            </p>
+  Our enterprise plan offers custom features, dedicated support, and flexible pricing for organizations with complex requirements. Let&#39;s discuss how we can help.
+</p>
           </div>
           <div className="mt-6 lg:mt-0 lg:w-1/3 lg:flex-none">
             <Link
