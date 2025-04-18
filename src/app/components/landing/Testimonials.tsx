@@ -1,5 +1,4 @@
-// src/components/landing/Testimonials.tsx
-'use client'; // Add this directive at the top
+'use client';
 
 import Image from 'next/image';
 
@@ -75,7 +74,8 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-3">
+        {/* Testimonial Cards Section */}
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -143,5 +143,6 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
+    
   );
 }

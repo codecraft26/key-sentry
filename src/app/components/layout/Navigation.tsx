@@ -4,9 +4,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTheme } from '@/app/theme-provider';
-import ThemeToggle from '../common/ThemeToggle';
-
 // Navigation items
 const navigationItems = [
   { name: 'Features', href: '#features' },
@@ -16,7 +13,7 @@ const navigationItems = [
 ];
 
 export default function Navigation() {
-  const { theme } = useTheme();
+  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -70,7 +67,7 @@ export default function Navigation() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
                 <Image 
-                  src={theme === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'}
+                  src={'dark' === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'}
                   alt="APIScape Logo"
                   width={120}
                   height={32}
@@ -129,7 +126,7 @@ export default function Navigation() {
                     Sign up
                   </Link>
                   <div className="pt-4 flex justify-center">
-                    <ThemeToggle />
+                   
                   </div>
                 </div>
               </div>
