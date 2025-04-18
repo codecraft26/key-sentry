@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTheme } from '@/app/theme-provider';
+
 
 // Footer navigation
 const footerNavigation = {
@@ -86,8 +86,7 @@ const footerNavigation = {
 };
 
 export default function Footer() {
-  const { theme } = useTheme();
-
+ 
   return (
     <footer className="bg-muted/30" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -98,7 +97,7 @@ export default function Footer() {
           <div className="space-y-8">
             <Link href="/">
               <Image
-                src={theme === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'}
+                src={'dark' === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'}
                 alt="APIScape Logo"
                 width={140}
                 height={32}

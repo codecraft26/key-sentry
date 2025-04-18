@@ -4,12 +4,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeToggle from '../common/ThemeToggle';
+
 import Navigation from './Navigation';
-import { useTheme } from '@/app/theme-provider';
+
 
 export default function Header() {
-  const { theme } = useTheme();
+
   const [isScrolled, setIsScrolled] = useState(false);
   
   // Track scroll position for header styling
@@ -36,7 +36,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image 
-                src={theme === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'} 
+                src={'dark' === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'} 
                 alt="APIScape Logo" 
                 width={140} 
                 height={32} 
@@ -62,7 +62,7 @@ export default function Header() {
             >
               Sign up
             </Link>
-            <ThemeToggle />
+           
           </div>
         </div>
       </div>
