@@ -1,14 +1,18 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Check, ChevronRight, Github, Mail } from 'lucide-react';
+import { Check, ChevronRight, Github, Mail, Building2, User } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 // Dynamically import Lottie to avoid SSR issues
 const LottiePlayer = dynamic(() => import('lottie-react'), { ssr: false });
 
+// Account type options
+type AccountType = 'individual' | 'organization';
+
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
+  const [accountType, setAccountType] = useState<AccountType>('individual');
   const [animationData, setAnimationData] = useState(null);
   
   // Load the Lottie JSON file
@@ -81,19 +85,72 @@ export default function Auth() {
                     </div>
                   </div>
                   
+                  {/* Account Type Toggle (only for signup) */}
+                  {!isLogin && (
+                    <div className="mb-6">
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Account Type
+                      </label>
+                      <div className="flex bg-muted/30 rounded-lg p-1 border border-muted">
+                        <button
+                          type="button"
+                          onClick={() => setAccountType('individual')}
+                          className={`flex items-center justify-center flex-1 py-2 px-3 text-sm font-medium rounded-md ${
+                            accountType === 'individual'
+                              ? 'bg-background text-foreground shadow-sm'
+                              : 'text-muted-foreground hover:text-foreground'
+                          }`}
+                        >
+                          <User size={18} className="mr-2" />
+                          Individual
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setAccountType('organization')}
+                          className={`flex items-center justify-center flex-1 py-2 px-3 text-sm font-medium rounded-md ${
+                            accountType === 'organization'
+                              ? 'bg-background text-foreground shadow-sm'
+                              : 'text-muted-foreground hover:text-foreground'
+                          }`}
+                        >
+                          <Building2 size={18} className="mr-2" />
+                          Organization
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
                   {/* Form */}
                   <form className="space-y-5">
-                    {/* Sign Up Fields */}
-                    {!isLogin && (
+                    {/* Sign Up Fields - Individual */}
+                    {!isLogin && accountType === 'individual' && (
+                      <div>
+                        <label htmlFor="fullName" className="block text-sm font-medium text-foreground">
+                          Full Name
+                        </label>
+                        <div className="mt-1">
+                          <input
+                            id="fullName"
+                            name="fullName"
+                            type="text"
+                            required
+                            className="block w-full rounded-md border border-muted bg-background/50 py-2 px-3 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Sign Up Fields - Organization */}
+                    {!isLogin && accountType === 'organization' && (
                       <>
                         <div>
-                          <label htmlFor="name" className="block text-sm font-medium text-foreground">
-                            Full Name
+                          <label htmlFor="organizationName" className="block text-sm font-medium text-foreground">
+                            Organization Name
                           </label>
                           <div className="mt-1">
                             <input
-                              id="name"
-                              name="name"
+                              id="organizationName"
+                              name="organizationName"
                               type="text"
                               required
                               className="block w-full rounded-md border border-muted bg-background/50 py-2 px-3 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
@@ -102,16 +159,38 @@ export default function Auth() {
                         </div>
                         
                         <div>
-                          <label htmlFor="company" className="block text-sm font-medium text-foreground">
-                            Company Name
+                          <label htmlFor="adminName" className="block text-sm font-medium text-foreground">
+                            Admin Name
                           </label>
                           <div className="mt-1">
                             <input
-                              id="company"
-                              name="company"
+                              id="adminName"
+                              name="adminName"
                               type="text"
+                              required
                               className="block w-full rounded-md border border-muted bg-background/50 py-2 px-3 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                             />
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="industry" className="block text-sm font-medium text-foreground">
+                            Industry
+                          </label>
+                          <div className="mt-1">
+                            <select
+                              id="industry"
+                              name="industry"
+                              className="block w-full rounded-md border border-muted bg-background/50 py-2 px-3 text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                            >
+                              <option value="">Select Industry</option>
+                              <option value="technology">Technology</option>
+                              <option value="finance">Finance</option>
+                              <option value="healthcare">Healthcare</option>
+                              <option value="education">Education</option>
+                              <option value="ecommerce">E-commerce</option>
+                              <option value="other">Other</option>
+                            </select>
                           </div>
                         </div>
                       </>
