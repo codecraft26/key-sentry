@@ -51,7 +51,7 @@ export default function Header() {
           {/* Action buttons */}
           <div className="hidden md:flex items-center gap-4">
             <Link 
-              href="/login" 
+              href="/auth" 
               className="text-sm font-medium transition hover:text-primary"
             >
               Log in
