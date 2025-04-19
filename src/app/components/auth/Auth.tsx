@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Check, ChevronRight, Github, Mail, Building2, User } from 'lucide-react';
-import dynamic from 'next/dynamic';
+
 
 // Dynamically import Lottie to avoid SSR issues
-const LottiePlayer = dynamic(() => import('lottie-react'), { ssr: false });
+// const LottiePlayer = dynamic(() => import('lottie-react'), { ssr: false });
 
 // Account type options
 type AccountType = 'individual' | 'organization';
@@ -13,18 +13,17 @@ type AccountType = 'individual' | 'organization';
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
   const [accountType, setAccountType] = useState<AccountType>('individual');
-  const [animationData, setAnimationData] = useState(null);
-  
+
   // Load the Lottie JSON file
   useEffect(() => {
     // Use dynamic import to load the JSON file
-    import('/public/Animation.json')
-      .then((data) => {
-        setAnimationData(data.default);
-      })
-      .catch((error) => {
-        console.error('Failed to load animation:', error);
-      });
+    // import('/public/Animation.json')
+    //   .then((data) => {
+    //     setAnimationData(data.default);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Failed to load animation:', error);
+    //   });
   }, []);
   
   const toggleForm = () => {
@@ -313,7 +312,7 @@ export default function Auth() {
                   <div className="mt-5 text-center text-sm text-muted-foreground">
                     {isLogin ? (
                       <>
-                        Don't have an account?{' '}
+                        Dont have an account?{' '}
                         <button 
                           onClick={toggleForm} 
                           className="font-medium text-primary hover:text-primary/90"
@@ -342,7 +341,7 @@ export default function Auth() {
               {/* Lottie Animation */}
               <div className="relative w-full max-w-lg">
                 <div className="bg-gradient-to-tr from-primary/5 to-purple-500/5 backdrop-blur-sm rounded-2xl border border-muted shadow-xl dark:from-primary/10 dark:to-purple-500/10 p-1 sm:p-2">
-                  <div className="w-full overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm shadow-lg ring-1 ring-muted">
+                  {/* <div className="w-full overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm shadow-lg ring-1 ring-muted">
                     {animationData && (
                       <LottiePlayer
                         animationData={animationData}
@@ -351,7 +350,7 @@ export default function Auth() {
                         style={{ width: '100%', height: '280px' }}
                       />
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
               
