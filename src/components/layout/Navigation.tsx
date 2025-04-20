@@ -24,7 +24,7 @@ export default function Navigation() {
           <Link
             key={item.name}
             href={item.href}
-            className="text-sm font-medium transition hover:text-primary"
+            className="text-base font-medium font-heading transition hover:text-primary"
           >
             {item.name}
           </Link>
@@ -68,7 +68,7 @@ export default function Navigation() {
               <Link href="/" className="-m-1.5 p-1.5">
                 <Image 
                   src={'dark' === 'dark' ? '/images/logo-light.svg' : '/images/logo-dark.svg'}
-                  alt="APIScape Logo"
+                  alt="KeySentry Logo"
                   width={120}
                   height={32}
                   className="h-8 w-auto" 
@@ -103,7 +103,7 @@ export default function Navigation() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-muted"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-lg font-semibold leading-7 font-heading hover:bg-muted"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.name}
@@ -112,15 +112,15 @@ export default function Navigation() {
                 </div>
                 <div className="py-6 space-y-4">
                   <Link
-                    href="/login"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-muted"
+                    href="/auth"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-lg font-semibold leading-7 font-heading hover:bg-muted"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Log in
                   </Link>
                   <Link
-                    href="/signup"
-                    className="block w-full rounded-full bg-primary px-4 py-2.5 text-center text-base font-semibold text-primary-foreground"
+                    href="/auth"
+                    className="block w-full rounded-full bg-primary px-4 py-2.5 text-center text-lg font-semibold text-primary-foreground font-heading"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Sign up
