@@ -1,27 +1,41 @@
 // src/app/layout.tsx
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Montserrat } from 'next/font/google';
 import { Metadata } from 'next';
-import Header from './components/layout/Header';
+import Header from '../components/layout/Header';
 
-const inter = Inter({ subsets: ['latin'] });
+// Primary heading font - Montserrat
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+  weight: ['500', '600', '700'],
+});
+
+// Body text font - Inter
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  weight: ['400', '500', '600'],
+});
 
 export const metadata: Metadata = {
-  title: 'APIScape - API Key Management & Analytics Platform',
+  title: 'KeySentry - API Key Management & Analytics Platform',
   description: 'Comprehensive API key management, usage tracking, and analytics for multi-tenant applications with role-based access control.',
   keywords: ['API', 'API key management', 'analytics', 'usage tracking', 'multi-tenant', 'RBAC'],
   authors: [{ name: 'Your Company Name' }],
   openGraph: {
-    title: 'APIScape - API Key Management & Analytics Platform',
+    title: 'KeySentry - API Key Management & Analytics Platform',
     description: 'Comprehensive API key management, usage tracking, and analytics for multi-tenant applications with role-based access control.',
-    url: 'https://apiscape.com',
-    siteName: 'APIScape',
+    url: 'https://keysentry.com',
+    siteName: 'KeySentry',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'APIScape Platform',
+        alt: 'KeySentry Platform',
       },
     ],
     locale: 'en_US',
@@ -29,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'APIScape - API Key Management & Analytics Platform',
+    title: 'KeySentry - API Key Management & Analytics Platform',
     description: 'Comprehensive API key management, usage tracking, and analytics for multi-tenant applications with role-based access control.',
     images: ['/images/twitter-image.jpg'],
   },
@@ -47,8 +61,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">
         <Header />
         {children}
       </body>

@@ -1,6 +1,6 @@
 // app/auth/login/page.tsx
 import { Metadata } from 'next';
-import Auth from '../../components/auth/Auth';
+import Auth from '../../../components/auth/Auth';
 
 export const metadata: Metadata = {
   title: 'Login | API Key Manager',
